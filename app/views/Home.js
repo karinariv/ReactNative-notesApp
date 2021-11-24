@@ -6,28 +6,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeNote } from "../store/noteSlice";
 import notetaking from '../../app/img/notetaking.png';
 
-//Notes structure
-    /**
-     * id: int
-     * title: string
-     * text: string
-     */
-
 const Home = ({ navigation }) => {
-    // const [notes, setNotes] = useState([]);
 
     const { notes } = useSelector(state => state.notes)
     const dispatch = useDispatch()
 
-    // const addNewNote = () => {
-        
-        // setNotes(prev => [...prev, newNote])
-    // }
-
     const deleteNote = (noteId) => {
         dispatch(removeNote(noteId))
-        // const newNotes = notes.filter(n => n.id !== noteId);
-        // setNotes(prev => newNotes);
     }
     
     const handleItemSelect = (note) => {

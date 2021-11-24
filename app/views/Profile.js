@@ -1,4 +1,3 @@
-// import { AddIcon, Box } from 'native-base';
 import React from 'react';
 import { 
   Image,
@@ -14,7 +13,6 @@ import { useState } from 'react';
 import { showInfo} from '../store/profileSlice';
 import myAvatar from '../img/myAvatar.png';
 import { store } from '../store/store'
-// import { launchImageLibrary } from 'react-native-image-picker';
 
 
 const Profile = ({ navigation, route }) => {
@@ -23,36 +21,6 @@ const Profile = ({ navigation, route }) => {
   const dispatch = useDispatch()
   const [phone, setPhone] = useState(route.params.initialState?.phone)
   const [description, setDescription] = useState(route.params.initialState?.description)
-  // const [resourcePath, setResourcePath] = React.useState({})
-
-  /* const selectFile = () => {
-    let options = {
-      title: 'Select Image',
-      customButtons: [
-        {
-          name: 'customOptionKey',
-          title: 'Choose file from Custom Option'
-        },
-      ],
-      storageOptions: {
-        skipBackup: true,
-        path: 'images',
-      },
-    };
-
-    launchImageLibrary(options, res => {
-      console.log('Response = ', res);
-
-      if (res.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (res.error) {
-        console.log('ImagePicker Error: ', res.error);
-      } else {
-        let source = res.assets[0];
-        setResourcePath(prev => source)
-      }
-    });
-  }; */
   
   const handleSave = () => {
     const myInfo = {
@@ -65,12 +33,6 @@ const Profile = ({ navigation, route }) => {
 
   return (
     <ScrollView>
-      {/* <Box position="relative" w="100%" h={200}>
-        <Image source={{ uri: resourcePath.uri }} style={styles.image} />
-        <TouchableOpacity onPress={selectFile} style={styles.button}  >
-          <AddIcon size="4" color="white" />
-        </TouchableOpacity>
-      </Box> */}
       <Image 
         source={myAvatar}
         style= {styles.image}
